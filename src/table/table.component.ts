@@ -368,7 +368,7 @@ import { I18n } from "./../i18n/i18n.module";
 					</ng-container>
 				</tr>
 				<tr
-				*ngIf="model.rowsExpanded[i] && !model.isRowFiltered(i)"
+				*ngIf="model.rowsExpanded[i] && !firstExpandedTemplateInRow(row) && !model.isRowFiltered(i)"
 				class="bx--expandable-row-v2"
 				ibmExpandedRowHover
 				[attr.data-child-row]="(model.rowsExpanded[i] ? 'true' : null)">
@@ -378,12 +378,12 @@ import { I18n } from "./../i18n/i18n.module";
 						[attr.colspan]="row.length + 2"
 						(click)="setExpandIndex($event)">
 						<ng-container *ngIf="!firstExpandedTemplateInRow(row)">{{firstExpandedDataInRow(row)}}</ng-container>
-						<ng-template
-							[ngTemplateOutlet]="firstExpandedTemplateInRow(row)"
-							[ngTemplateOutletContext]="{data: firstExpandedDataInRow(row)}">
-						</ng-template>
 					</td>
 				</tr>
+				<ng-template
+				[ngTemplateOutlet]="firstExpandedTemplateInRow(row)"
+				[ngTemplateOutletContext]="{data: firstExpandedDataInRow(row)}">
+			</ng-template>
 			</ng-container>
 		</tbody>
 		<ng-template #noDataTemplate><ng-content></ng-content></ng-template>
