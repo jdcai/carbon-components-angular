@@ -24,24 +24,22 @@
     }
   },
   "release": {
-    "pkgRoot": "dist"
-  },
-  "commitlint": {
-    "types": [
-      "feat",
-      "fix",
-      "docs",
-      "style",
-      "refactor",
-      "perf",
-      "test",
-      "chore",
-      "revert"
-    ],
-    "warnOnFail": false,
-    "maxSubjectLength": 100,
-    "subjectPattern": ".+",
-    "subjectPatternErrorMsg": "Subject does not match subject pattern!"
+    "pkgRoot": "dist",
+    "branches": [
+      {
+        "name": "master",
+        "channel": "latest"
+      },
+      {
+        "name": "next",
+        "channel": "next"
+      },
+      {
+        "name": "v9",
+        "channel": "carbon-v9",
+        "range": "2.X"
+      }
+    ]
   },
   "config": {
     "commitizen": {
@@ -128,7 +126,7 @@
     "raw-loader": "0.5.1",
     "rxjs": "6.2.2",
     "sass-loader": "7.0.1",
-    "semantic-release": "15.10.6",
+    "semantic-release": "16.0.0-beta.18",
     "style-loader": "0.21.0",
     "stylelint": "8.4.0",
     "stylelint-webpack-plugin": "0.10.4",
