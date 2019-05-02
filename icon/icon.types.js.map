@@ -1,0 +1,1 @@
+{"version":3,"file":"icon.types.js","sourceRoot":"","sources":["../src/icon/icon.types.ts"],"names":[],"mappings":"","sourcesContent":["/**\n* Fromalization of our icon sizes into a type\n*/\nexport type IconSize = 14 | 16 | 20 | 30;\n\nexport interface SizeMap {\n\t[key: string]: IconSize;\n}\n"]}
