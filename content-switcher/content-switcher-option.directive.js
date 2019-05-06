@@ -62,7 +62,7 @@ var ContentSwitcherOption = /** @class */ (function () {
         this.active = true;
     };
     ContentSwitcherOption.prototype.onBlur = function (event) {
-        if (event.relatedTarget) {
+        if (event.relatedTarget && event.relatedTarget.classList.contains("bx--content-switcher-btn")) {
             this.active = false;
         }
     };
